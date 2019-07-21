@@ -3,8 +3,8 @@
     <head>
         <title>Turing Ecommerce Store</title>
         <link rel = "stylesheet" href = "styles.css">
-        <script> src = "main.js" </script>
-        
+        <script async  src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
@@ -14,11 +14,18 @@
         <h1 id = "store-title" class = "animated rollIn" style="text-align: center">Pakistan's First Turing Store</h1>
         <h1 id = "prod-title" class = "animated swing" style="text-align: center">Products</h1>
         <div id = "products">
-            <div class="overlay">
-                <img class="single-prod" src = "images/alan_turing.jpg" style="margin-left: 0px; width: 40%">
+            
+            <div id = "single-prod">
+                <img id="prod-img" src = "images/alan_turing.jpg">
+                <button id = "buy-now" style = "display: none" >Buy Now</button>
+
                 <div class="text">Turing's 50</div>
             </div>
+            <script src = "js/main.js">  </script>
+
+            
         </div>  
 
+      
     </body>
 </html>
