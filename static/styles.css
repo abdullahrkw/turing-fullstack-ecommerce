@@ -1,5 +1,5 @@
 body {
-    margin: 100px;
+    margin: 0 100px 0 100px;
     background-color : #4ad7b1;
 }
 #store-title{
@@ -74,6 +74,35 @@ img:hover~#buy-now{
     cursor: pointer;
     background-color: white;
   }
-  
+  header{
+    width: 100%;
+    height: 100px;
+    background-color: #555;
+    display: -webkit-flexbox;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    justify-content: center;
+
+  }
+  footer{
+    width: 100%;
+    height: 50px;
+    bottom:0px;
+    background-color: #555;
+    display: -webkit-flexbox;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    justify-content: center;
+  }
   
   
