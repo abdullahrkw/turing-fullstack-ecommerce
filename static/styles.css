@@ -92,8 +92,11 @@ img:hover~#buy-now{
     -webkit-align-items: center;
     align-items: center;
     justify-content: center;
+    
 
   }
+ 
+  
   footer{
     width: 100%;
     height: 50px;
@@ -108,6 +111,9 @@ img:hover~#buy-now{
     -webkit-align-items: center;
     align-items: center;
     justify-content: center;
+  }
+  #cart{
+    cursor: pointer;
   }
   
   
