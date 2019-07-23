@@ -1,6 +1,11 @@
 body {
     margin: 0 100px 0 100px;
-    background-color : #4ad7b1;
+}
+canvas{
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:-1;
 }
 #store-title{
     top: 50px;
@@ -77,7 +82,7 @@ img:hover~#buy-now{
   header{
     width: 100%;
     height: 100px;
-    background-color: #555;
+    background-color: #f7f7f7;
     display: -webkit-flexbox;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -92,8 +97,8 @@ img:hover~#buy-now{
   footer{
     width: 100%;
     height: 50px;
-    bottom:0px;
-    background-color: #555;
+    bottom:0%;
+    background-color: #f7f7f7;
     display: -webkit-flexbox;
     display: -ms-flexbox;
     display: -webkit-flex;
