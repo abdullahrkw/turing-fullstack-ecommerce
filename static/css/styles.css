@@ -15,6 +15,7 @@ canvas{
   max-width: 40vw;
   max-height: 350px;
 }
+/*
 img{
  
     height: 300px;
@@ -22,7 +23,7 @@ img{
     border-radius: 30px 30px 0 0;
     opacity: 1;
     transition: opacity 0.1s;
-}
+}*/
 img:hover{
   opacity: 0.7;
   
@@ -49,10 +50,10 @@ img:hover{
   background-color: #4ad7b1;
 
 }
-
+/*
 img:hover~#buy-now{
   display: block;
-}
+}*/
 
   .text {
   
@@ -80,6 +81,9 @@ img:hover~#buy-now{
     background-color: white;
   }
   header{
+    position : sticky;
+    top: 0%;
+    z-index: 10;
     width: 100%;
     height: 100px;
     background-color: #f7f7f7;

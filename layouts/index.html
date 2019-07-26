@@ -1,36 +1,27 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Turing Ecommerce Store</title>
-        <link rel = "stylesheet" href = "styles.css">
-        <script async  src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">        
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/84/three.min.js"></script>
-        <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/28963/palettes.js"></script>
-        <script src = "https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
-        <script src = "https://cdnjs.cloudflare.com/ajax/libs/simplex-noise/2.4.0/simplex-noise.min.js"></script>
-
-		<style>
-			canvas { width: 100%; height: 100% }
-		</style>
-        
-    </head>
+    {{ partial "head.html" . }}
     <body>
             <canvas id="canvas"></canvas>
-        <header>
-            
-             <h1 id = "store-title" class = "animated rollIn" style="text-align: center">Pakistan's First Turing Store</h1>
-             <div id= "cart" style="margin-left : 100px;">Shopping Cart <i class="fas fa-shopping-cart"></i></div>
-             
-
-        </header>
+      
+       
         <div id = "container">
+            {{ partial "header.html" . }}
 
-            <h1 id = "prod-title" class = "animated swing" style="text-align: center; color: white">Products</h1>
-            <div id = "products">
+            <h1 id = "prod-title" class = "animated swing" style="text-align: center; color: #333">Products</h1>
+
+            <div class="main">
+				<ul id="og-grid" class="og-grid">
+					{{ range $.Site.Data.items.items }}
+					<li>
+						<a href="{{.url}}" data-largesrc="{{.image}}" data-title="{{.title}}" data-description="{{.description }}" data-buttontext="{{.buttontext}}">
+							<img src="{{.thumb}}" alt="{{.alt}}"/>
+						</a>
+					</li>
+					{{ end }}
+				</ul>
+			</div>
+           <!-- <div id = "products">
                 
                 <div id = "single-prod">
                     <img id="prod-img" src = "images/alan_turing.jpg">
@@ -39,11 +30,10 @@
                 </div>
                 <script src = "js/main.js">  </script>
              
-            </div>  
+            </div>  -->
         </div>
 
-      <footer>
-          <p>All rights reserved to Turing Store&#169;.</p>
-      </footer>
+     {{ partial "footer.html" . }}
+     {{ partial "scripts.html" . }}
     </body>
 </html>

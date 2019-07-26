@@ -1,1 +1,32 @@
-baseurl = "https://example.org"
+# Site settings
+baseurl = "https://example.org/"
+languageCode = "en-us"
+title = "Turing Store"
+
+# Enter your tracking code to enable Google Analytics
+googleAnalytics = "UA-XXXXXXXX-Y"
+
+contentdir = "content"
+datadir = "data"
+layoutdir = "layouts"
+publishdir = "public"
+
+[params]
+    # Meta
+    title = "Turing Store"
+    subtitle = "Turing is the place where you can get best quality shoes."
+    author = "Abdullah"
+    description = "Turing is the place where you can get best quality shoes."
+    keywords = "Shoes, Quality, Best"
+
+    # Body background color
+    bodybgcolor = "#f9f9f9"
+
+    # Preview container button text
+    buttontext = "Product Details"
+
+    # Footer text
+    footertext = "All rights reserved to Turing Store&#169;."
+    # add extra-css
+    # custom_css = ['css/extra1.css', 'css/extra2.css']
+
