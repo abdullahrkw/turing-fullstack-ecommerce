@@ -39,6 +39,11 @@
 	display: block;
 
 }
+.og-grid li > a button:hover{
+	color: #333;
+	background-color: #f7f7f7;
+}
+
 .og-grid li.og-expanded > a::after {
 	top: auto;
 	border: solid transparent;
