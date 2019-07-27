@@ -6,11 +6,8 @@
 		<meta name="description" content="{{ with .Site.Params.description }}{{ . }}{{ end }}" />
 		<meta name="keywords" content="{{ with .Site.Params.keywords }}{{ . }}{{ end }}" />
 		<meta name="author" content="{{ with .Site.Params.author }}{{ . }}{{ end }}" />
-		<link rel="icon" href="{{ .Site.Params.BaseURL }}favicon.ico" />
 		{{ .Hugo.Generator }}
-		<style>
 		
-		</style>
 		<link rel="stylesheet" type="text/css" href="/css/default.css" />
 		<link rel="stylesheet" type="text/css" href="/css/component.css" />
 		{{ range .Site.Params.custom_css }}
