@@ -231,3 +231,11 @@
 	width: 100px;
 	height: 50px;
 }
+@media only screen and (max-width: 950px){
+	#product-page img{
+		float : none;
+	}
+	#product-content{
+		margin-left: 0px;
+	}
+}

@@ -74,6 +74,7 @@ img:hover~#buy-now{
   }
   header{
     position : sticky;
+    
     top: 0%;
     z-index: 10;
     width: 100%;
@@ -90,6 +91,9 @@ img:hover~#buy-now{
     justify-content: center;
     
 
+  }
+  header h1{
+    cursor: pointer;
   }
  
   
