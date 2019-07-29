@@ -89,8 +89,11 @@ img:hover~#buy-now{
     -webkit-align-items: center;
     align-items: center;
     justify-content: center;
-    
+    margin: 0 -5px;
 
+  }
+  .item{
+    margin: 0 10px;
   }
   header h1{
     cursor: pointer;

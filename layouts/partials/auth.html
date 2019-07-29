@@ -1,0 +1,41 @@
+<script>
+    if(!window.localStorage.getItem('testing')){
+       window.localStorage.setItem('testing','loggedOut')
+    }
+</script>
+
+
+<div id = "app" class="item" style="align-items: flex-end">	
+
+      <div  v-if = "loginfo === 'loggedIn'" id = "Logout"  @click ="triggerNetlifyIdentityAction('logout')">Logout | {- username -}</div>
+          
+      <div  v-if = "loginfo === 'loggedOut'" id = "Login"  @click="triggerNetlifyIdentityAction('login')">Login</div>
+                  
+</div>
+
+<!--
+<script>
+      if(window.localStorage.getItem('testing')==='loggedOut'){
+          document.getElementById('Login').style.display = 'block';
+          document.getElementById('Logout').style.display = 'none';
+
+  
+       }
+       else if(window.localStorage.getItem('testing')==='loggedIn') {
+          
+          document.getElementById('Login').style.display = 'none';
+          document.getElementById('Logout').style.display = 'block';
+          //document.getElementById('Logout').innerHTML = typeof window.localStorage.getItem('testing');
+
+  
+       }               
+  </script>-->
+  <script  src="https://unpkg.com/vue"></script>
+  <script  src="https://unpkg.com/vuex"></script>
+<script src = '/js/main.js'></script>		
+<style>
+ #Login, #Logout{
+    cursor: pointer;
+ }
+ 
+</style>	

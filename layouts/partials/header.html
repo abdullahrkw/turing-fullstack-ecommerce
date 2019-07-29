@@ -1,8 +1,9 @@
-<header class="fixed">
+<header class="">
      <a href="/">     
 		<h1  id = "store-title" class = "animated rollIn"> {{ .Site.Title }} </h1>
 	</a>  
-	<div id= "cart" style="margin-left : 100px;">Shopping Cart <i class="fas fa-shopping-cart"></i></div>
+	<div id= "cart" class = "item" style="margin-left : 100px;">Shopping Cart <i class="fas fa-shopping-cart"></i></div>
+	{{ partial "auth.html" . }}
 	
 
 </header>
