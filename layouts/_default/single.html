@@ -11,36 +11,38 @@
 		</div>
 		<div id = "product-page">
 				
-			<img src = {{ printf "%s" $.Params.image }}/>
+			<img src="https://img.commercelayer.io/skus/BABYONBU000000E63E74.png?fm=jpg&q=90" />			
 			<div id = "product-content">
 					<h1 >{{.Title}}</h1>
 					<h3>{{.Description}}</h3>
+					<div class="clayer-price" data-sku-code="BABYONBU000000E63E74NBXX ">
+						<span class="amount"></span>
+					</div>
 					<button id = "add-cart">Add to Cart</button>	
 
 			</div>
-			<div class="clayer-price" data-sku-code="A11">
-				<span class="amount"></span>
-			</div>			
-			  <div class = "availability"></div>
-			  <div id="clayer-config"
-			  data-base-url="https://turing-store.commercelayer.io"
-			  data-client-id="b8c8adc3ad2fb1f780dd9fb123daad09f72822cc176b306d4dc319071a9f7432"
-			  data-market-id="1058"
-			  data-country-code="US"
-			  data-language-code="en"
-			  data-cart-url="https://example.com/cart"
-			  data-return-url="https://example.com/return"
-			  data-privacy-url="https://example.com/privacy"
-			  data-terms-url="https://example.com/terms"
-			  data-dev-settings-debug="true"
-			  data-dev-settings-console="true"
-			  data-dev-settings-trace="true" >
-			</div>
-			<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/commercelayer@1.9.10/dist/commercelayer.min.js"></script>			
+						
+			 			
 
 		</div>
         {{ partial "footer.html" . }}
 
 		{{ partial "scripts.html" . }}
+	
+		<div id="clayer-config"
+		data-base-url="https://turing-store.commercelayer.io"
+		data-client-id="b8c8adc3ad2fb1f780dd9fb123daad09f72822cc176b306d4dc319071a9f7432"
+		data-market-id="1057"
+		data-country-code="US"
+		data-language-code="en"
+		data-cart-url="https://example.com/cart"
+		data-return-url="https://example.com/return"
+		data-privacy-url="https://example.com/privacy"
+		data-terms-url="https://example.com/terms"
+		data-dev-settings-debug="true"
+		data-dev-settings-console="true"
+		data-dev-settings-trace="true" >
+	  </div>
+	  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/commercelayer@1.9.10/dist/commercelayer.min.js"></script>
 	</body>
 </html>
