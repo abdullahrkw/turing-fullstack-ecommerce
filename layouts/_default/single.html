@@ -15,31 +15,12 @@
 			<div id = "product-content">
 					<h1 >{{.Title}}</h1>
 					<h3>{{.Description}}</h3>
-					<div class="clayer-price" data-sku-code="A11">
-							<span class="amount"></span>
-					</div>
+				
 					<button id = "add-cart">Add to Cart</button>	
 
 			</div>
 						
-			  <!-- Config -->
-				<div id="clayer-config"
-				data-base-url="https://turing-store.commercelayer.io"
-				data-client-id="39d024882a40c9e5652ee2f3295d47918c9a3c2cd2145103d467c6498a1ccb51"
-				data-market-id="1058"
-				data-country-code="US"
-				data-language-code="en-US"
-				data-cart-url="https://example.com/cart"
-				data-return-url="https://example.com/return"
-				data-privacy-url="https://example.com/privacy"
-				data-terms-url="https://example.com/terms"
-				data-dev-settings-debug="true"
-				data-dev-settings-console="true"
-				data-dev-settings-trace="true" >
-				</div>
-
-<!-- JS Library -->
-				<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/commercelayer@1.9.10/dist/commercelayer.min.js"></script>
+			 
         {{ partial "footer.html" . }}
 
 		{{ partial "scripts.html" . }}
