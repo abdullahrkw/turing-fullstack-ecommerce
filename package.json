@@ -12,7 +12,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "lambda-serve": "netlify-lambda serve functions",
+    "lambda-serve": "netlify-lambda serve functions --config webpack.config.js",
     "lambda-build": "netlify-lambda build functions"
     
   },

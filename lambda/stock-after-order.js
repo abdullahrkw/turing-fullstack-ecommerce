@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./price-read.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./stock-after-order.js");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -13377,10 +13377,10 @@ module.exports = __webpack_require__(/*! util */ "util").deprecate;
 
 /***/ }),
 
-/***/ "./price-read.js":
-/*!***********************!*\
-  !*** ./price-read.js ***!
-  \***********************/
+/***/ "./stock-after-order.js":
+/*!******************************!*\
+  !*** ./stock-after-order.js ***!
+  \******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -13392,15 +13392,17 @@ const client = new faunadb.Client({
 });
 
 exports.handler = (event, context, callback) => {
-  console.log('Function `price-read` invoked');
+  console.log('Function `stock-after-order` invoked');
   const data = JSON.parse(event.body);
-  return client.query(q.Paginate(q.Match(q.Index("price-by-sku"), data.sku))).then(response => {
-    const todoRefs = response.data[0][1];
+  client.query(q.Update(q.Select('ref', q.Equals(q.Var("sku"), data.sku)), {
+    data: {
+      stock: 70
+    }
+  })).then(response => {
+    console.log("success", response);
     return callback(null, {
       statusCode: 200,
-      body: JSON.stringify({
-        price: todoRefs
-      })
+      body: JSON.stringify(response)
     });
   }).catch(error => {
     console.log('error', error);
