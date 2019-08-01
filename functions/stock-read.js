@@ -1,4 +1,5 @@
 
+
 const faunadb = require('faunadb');
 
 const q = faunadb.query;
@@ -8,14 +9,14 @@ const client = new faunadb.Client({
 
 
 exports.handler = (event, context, callback) => {
-  console.log('Function `price-read` invoked');
+  console.log('Function `stock-read` invoked');
   const data = JSON.parse(event.body);
-  return client.query(q.Paginate(q.Match(q.Index("price-by-sku"),data.sku)))
+  return client.query(q.Paginate(q.Match(q.Index("stock-by-sku"),data.sku)))
     .then((response) => {
       const todoRefs = response.data[0][1];
         return callback(null, {
           statusCode: 200,
-          body: JSON.stringify({price:todoRefs})
+          body: JSON.stringify({stock:todoRefs})
         })
      
     })
