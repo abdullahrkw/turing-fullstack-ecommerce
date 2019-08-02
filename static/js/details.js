@@ -1,26 +1,30 @@
-const axios = require('axios');
 
-let app2 =  new Vue({
-    el: '#price-stock', 
+
+let prStck =  new Vue({
+    el: '#dynamic', 
     delimiters: ["{-","-}"],
     
-
     data: {
-        price : 0,
+        price : "abc",
         stock : 0
     
     },
-    mounted () {
-        axios
-        .get('https://api.coindesk.com/v1/bpi/currentprice.json')
-        .then(response => (this.info = response.data.bpi))
-         .catch(error => console.log(error))
-    }
-    
+    computed: {
+        getPrice() {
+           
+           return  this.$data.price;
+         },
+         getStock(){
+             return this.$data.stock;
+         }
 
-   
-         
-    // instance methods
-        
+   },
+   mounted: () =>{
+    axios
+    .get('/.netlify/functions/test')
+    .then(response => (this.$data.price = JSON.parse(response)))
+     .catch(error => console.log(error))
+  }
+    
     
     })
