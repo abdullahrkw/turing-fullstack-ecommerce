@@ -15,7 +15,7 @@ let prStck =  new Vue({
         .then(response => {console.log('success', response);
                           
                             console.log(response.data);
-                            console.log(date[0][1]);
+                            console.log(response.date[0][1]);
                         })
         .catch(error => console.log('this is error',error));
       },
