@@ -56,7 +56,7 @@ let prStck =  new Vue({
         addToCart(){
             this.order_q ++;
             document.getElementById('order-q').innerHTML = "(" + this.order_q + ")";
-            
+            window.localStorage.setItem("order_q", order_q);  
 
         }
 
