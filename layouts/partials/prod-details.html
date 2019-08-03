@@ -3,7 +3,7 @@
     <p> SKU: {- getSKU("{{ $.Params.sku  }}") -}</p>
     <p>Stock Quantity: {- getStock -}</p>
                     
-    <button id = "add-cart">Add to Cart</button>
+    <button id = "add-cart" @click = "addToCart">Add to Cart</button>
 </div>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
@@ -11,6 +11,16 @@
     
     
 <style>
-     
+    #dynamic{
+        margin-top: 30px;
+    }
+     #dynamic button{
+         border-radius: 20px;
+         margin-top: 30px; 
+     }
+    
+    #dynamic button::-moz-focus-inner {
+  border: 0;
+}
  </style>	
     

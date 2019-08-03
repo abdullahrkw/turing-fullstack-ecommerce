@@ -7,7 +7,8 @@ let prStck =  new Vue({
     data: {
         price : null,
         stock : null,
-        sku : ""
+        sku : "",
+        order_q : 0
     
     },
     mounted: async function(){
@@ -51,13 +52,22 @@ let prStck =  new Vue({
             console.log('this is sku', sku);
             return sku;
 
+        },
+        addToCart(){
+            this.order_q ++;
+            document.getElementById('order-q').innerHTML = "(" + this.order_q + ")";
+            
+
         }
+
 
     }
   
     
     
     }); 
+
+
 
 
 
