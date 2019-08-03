@@ -9,11 +9,11 @@ let prStck =  new Vue({
         stock : null
     
     },
-    mounted: function(){
+    mounted: async function(){
         axios
-        .post('https://xenodochial-mirzakhani-152330.netlify.com/.netlify/functions/price-read',JSON.stringify({'sku':'A12'}))
-        .then(function(response)  {this.price = 10;})
-         .catch(error => console.log(error));
+        .post('https://xenodochial-mirzakhani-152330.netlify.com/.netlify/functions/price-read',JSON.stringify({'sku':'A13'}))
+        .then(response => console.log('succes', response))
+        .catch(error => console.log('this is error',error));
       },
     computed: {
         getPrice() {
@@ -29,33 +29,5 @@ let prStck =  new Vue({
     
     
     }); 
-
-    function createTodo() {
-        return fetch('https://xenodochial-mirzakhani-152330.netlify.com/.netlify/functions/price-read', {
-          body: {
-            "sku" : "A13"
-        },
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-        }
-        }).then(response => {
-          return response.json()
-        })
-      }
-
-      const mySKU = {
-        "sku" : "A13"
-      }
-      
-      createTodo().then((response) => {
-        console.log('API response', response);
-        prStck.$data.price = 20;
-        // set app state
-      }).catch((error) => {
-        console.log('API error', error)
-        prStck.$data.price = "error";
-
-      })
 
     
