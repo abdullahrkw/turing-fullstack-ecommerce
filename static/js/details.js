@@ -16,6 +16,8 @@ let prStck =  new Vue({
                           
                             console.log(response.data);
                             console.log(response.data.data[0][1]);
+                            this.price = response.data.data[0][1];
+                            console.log(this.price);
                         })
         .catch(error => console.log('this is error',error));
       },
