@@ -1,6 +1,6 @@
 <div id = "dynamic">
     <h3>Price: {- price -}</h3>
-    <p> SKU: {{ $.Params.sku  }}</p>
+    <p> SKU: {- getSKU("{{ $.Params.sku  }}") -}</p>
                     
     <button id = "add-cart">Add to Cart</button>
 </div>

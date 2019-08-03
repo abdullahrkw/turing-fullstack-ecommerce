@@ -6,12 +6,13 @@ let prStck =  new Vue({
     
     data: {
         price : null,
-        stock : null
+        stock : null,
+        sku : ""
     
     },
     mounted: async function(){
         axios
-        .post('/.netlify/functions/price-read',JSON.stringify({'sku':'A13'}))
+        .post('/.netlify/functions/price-read',JSON.stringify({'sku': this.sku}))
         .then(response => {console.log('success', response);
                           
                             console.log(response.data);
@@ -28,12 +29,28 @@ let prStck =  new Vue({
          },
          getStock(){
              return this.$data.stock;
+         }, 
+         getSKU(){
+             return this.$data.sku;
          }
+    },
+    methods: {
+        getSKU(sku){
+            this.sku = sku;
+            console.log('this is sku', sku);
+            return sku;
 
-   },
+        }
+
+    }
   
     
     
     }); 
+
+
+
+        
+  
 
     
