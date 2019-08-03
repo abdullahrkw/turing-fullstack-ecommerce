@@ -13,10 +13,10 @@ exports.handler = (event, context, callback) => {
   const data = JSON.parse(event.body);
   return client.query(q.Paginate(q.Match(q.Index("stock-by-sku"),data.sku)))
     .then((response) => {
-      const todoRefs = response.data[0][1];
+      console.log('success', response );
         return callback(null, {
           statusCode: 200,
-          body: JSON.stringify({stock:todoRefs})
+          body: JSON.stringify(response)
         })
      
     })

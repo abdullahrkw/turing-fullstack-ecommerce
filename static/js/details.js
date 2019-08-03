@@ -21,6 +21,17 @@ let prStck =  new Vue({
                             console.log(this.price);
                         })
         .catch(error => console.log('this is error',error));
+        axios
+        .post('/.netlify/functions/stock-read',JSON.stringify({'sku': this.sku}))
+        .then(response => {console.log('success', response);
+                          
+                            console.log(response.data);
+                            console.log(response.data.data[0][1]);
+                            this.stock = response.data.data[0][1];
+                            console.log(this.stock);
+                        })
+        .catch(error => console.log('this is error',error));
+
       },
     computed: {
         getPrice() {
