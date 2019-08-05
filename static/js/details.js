@@ -8,7 +8,8 @@ let prStck =  new Vue({
         price : null,
         stock : null,
         sku : "",
-        order_q : 0
+    
+        cart :  window.localStorage.getItem('cart')?JSON.parse(window.localStorage.getItem('cart')):[]
     
     },
     mounted: async function(){
@@ -54,10 +55,18 @@ let prStck =  new Vue({
 
         },
         addToCart(){
-            this.order_q ++;
-            document.getElementById('order-q').innerHTML = "(" + this.order_q + ")";
-            window.localStorage.setItem("order_q", order_q);  
+            
+            this.cart.push(({"sku": this.sku})); 
+            document.getElementById('order-q').innerHTML = "(" + this.cart.length + ")";
+             window.localStorage.setItem("cart", JSON.stringify(this.cart)); 
+          
 
+        },
+        shoppingCart(){
+
+        },
+        removeFromCart(){
+            
         }
 
 
@@ -67,8 +76,8 @@ let prStck =  new Vue({
     
     }); 
 
-
-
+    
+  
 
 
         
