@@ -12,8 +12,7 @@
 					
 				<img src = {{ printf "%s" $.Params.image }}/>
 				<div id = "product-content">
-						<h1 >{{.Title}}</h1>
-						<h3>{{.Description}}</h3>
+						
 						{{ partial "prod-details.html" . }}
 
 				</div>

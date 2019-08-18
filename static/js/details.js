@@ -8,6 +8,8 @@ let prStck =  new Vue({
         price : null,
         stock : null,
         sku : "",
+        name : "",
+        url : "",
     
         cart :  window.localStorage.getItem('cart')?JSON.parse(window.localStorage.getItem('cart')):[]
     
@@ -54,9 +56,19 @@ let prStck =  new Vue({
             return sku;
 
         },
+        getName(name){
+            this.name = name;
+            console.log('this is sku', name);
+            return name;
+
+        },
+        getUrl(url){
+            this.url = url;
+            return "";
+        },
         addToCart(){
             
-            this.cart.push(({"sku": this.sku})); 
+            this.cart.push(({"sku": this.sku, "name": this.name, "price": this.price, "url": this.url })); 
             document.getElementById('order-q').innerHTML = "(" + this.cart.length + ")";
              window.localStorage.setItem("cart", JSON.stringify(this.cart)); 
           

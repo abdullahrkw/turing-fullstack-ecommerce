@@ -1,4 +1,6 @@
 <div id = "dynamic">
+    <h1 >{- getName("{{.Title}}") -} {- getUrl( "{{ .Permalink }}")-}</h1>
+    <h3>{{.Description}}</h3>
     <h3>Price: {- getPrice -}</h3>
     <p> SKU: {- getSKU("{{ $.Params.sku  }}") -}</p>
     <p>Stock Quantity: {- getStock -}</p>

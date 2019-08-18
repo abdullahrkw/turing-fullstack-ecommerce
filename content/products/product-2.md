@@ -1,7 +1,7 @@
  
  ---
 
-title : "Product X"
+title : "Product 2"
 image : "/images/shoesfull/2.jpeg"
 thumb : "/images/shoesthumbs/2.jpeg"
 alt : "Product X"
