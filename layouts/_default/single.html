@@ -60,6 +60,21 @@
                             let rowCount = tableRows.length;
 
                             for (let x =0; x< rowCount; x++) {
+                            
+                            let name = tableRows[x].cells[1].innerHTML;
+                            tableRows[x].cells[1].innerHTML = "";
+                            let url = tableRows[x].cells[3].innerHTML;
+                            let a = document.createElement('a');
+                            let linkText = document.createTextNode(name);
+                            a.appendChild(linkText);
+                          
+                            a.href = url;
+                            tableRows[x].cells[1].appendChild(a);
+                            //document.body.appendChild(a);
+
+                            
+                           
+                            
                             tableRows[x].deleteCell(-1);
                             }
                      }
