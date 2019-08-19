@@ -4,19 +4,45 @@
 	{{ partial "head.html" . }}
 	{{ template "_internal/google_analytics.html" . }}
 	</head>
-	<body id = "prod">
+	<body id = "cart-page">
 		<div class="container">	
 				{{ partial "header.html" . }}
 			
-			<div id = "product-page">
-					
-				<img src = {{ printf "%s" $.Params.image }}/>
-				<div id = "product-content">
-						
-						{{ partial "prod-details.html" . }}
-
-				</div>
-			</div>	
+            <table>
+                <caption>Your Shopping Cart</caption>
+                    <!-- here goes our data! -->
+             </table>
+                 
+            <script > 
+            let mountains = JSON.parse(window.localStorage.getItem('cart'));
+                 
+                 function generateTableHead(table, data) {
+                   let thead = table.createTHead();
+                   let row = thead.insertRow();
+                   for (let key of data) {
+                     let th = document.createElement("th");
+                     let text = document.createTextNode(key);
+                     th.appendChild(text);
+                     row.appendChild(th);
+                   }
+                 }
+                 function generateTable(table, data) {
+                   for (let element of data) {
+                     let row = table.insertRow();
+                     for (key in element) {
+                       let cell = row.insertCell();
+                       let text = document.createTextNode(element[key]);
+                       cell.appendChild(text);
+                     }
+                   }
+                 }
+                 
+                 let table = document.querySelector("table");
+                 let data = Object.keys(mountains[0]);
+                 generateTableHead(table, data);
+                 generateTable(table, mountains);
+            
+            </script>      
 		</div>			
 			 
         {{ partial "footer.html" . }}
@@ -25,4 +51,3 @@
 
 	</body>
 </html>
-
