@@ -37,39 +37,38 @@
                    }
                  }
                  function totalPrice (table, data){
-                     let price = 0;
-                     
-                     for (let element of data){
-                       
-                        
-                         for(key in element){
-                            
+                     let price = 0;  
+                     for (let element of data){                   
+                         for(key in element){                            
                              if(key === "price"){
-                                 price = price + element[key];
-                                 
-
+                                 price = price + element[key];                                
                              }
                          }
                      }
-                   
                             let row = table.insertRow();
                             let cell1 = row.insertCell(0);
                             cell1.innerHTML= "Total Price";
                             cell1.colSpan = 3;
                             let cell2 = row.insertCell(1);
-                            cell2.innerHTML= price;
-                            
-
-                     
-
+                            cell2.innerHTML= price;  
                      return price;
                      
                  }
+                 function updateTable(table){
+                    
+                            let tableRows = table.getElementsByTagName('tr');
+                            let rowCount = tableRows.length;
+
+                            for (let x =0; x< rowCount; x++) {
+                            tableRows[x].deleteCell(-1);
+                            }
+                     }
                  
                  let table = document.querySelector("table");
                  let data = Object.keys(mountains[0]);
                  generateTableHead(table, data);
                  generateTable(table, mountains);
+                updateTable(table);
                  if(data.length > 0){
                      totalPrice(table, mountains)
                 }
