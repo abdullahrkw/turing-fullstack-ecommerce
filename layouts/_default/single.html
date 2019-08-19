@@ -58,8 +58,9 @@
                     
                             let tableRows = table.getElementsByTagName('tr');
                             let rowCount = tableRows.length;
+                            tableRows[0].deleteCell(-1);
 
-                            for (let x =0; x< rowCount; x++) {
+                            for (let x =1; x< rowCount; x++) {
                             
                             let name = tableRows[x].cells[1].innerHTML;
                             tableRows[x].cells[1].innerHTML = "";
@@ -67,13 +68,9 @@
                             let a = document.createElement('a');
                             let linkText = document.createTextNode(name);
                             a.appendChild(linkText);
-                          
                             a.href = url;
+                            a.style.color = "blue";
                             tableRows[x].cells[1].appendChild(a);
-                            //document.body.appendChild(a);
-
-                            
-                           
                             
                             tableRows[x].deleteCell(-1);
                             }
