@@ -1,12 +1,12 @@
 body {
     margin: 0 10vw 0 10vw;
+    
+      font-family: Arial;
+      font-size: 17px;
+      padding: 8px;
+    
 }
-canvas{
-  position:absolute;
-  left:0;
-  top:0;
-  z-index:-1;
-}
+
 #store-title{
     top: 50px;
 }
@@ -119,7 +119,7 @@ img:hover~#buy-now{
 
   #prod footer{
     position: absolute;
-    bottom: 0;
+    bottom: 0px;
     width: 100%;
     height: 50px;
   }
@@ -129,7 +129,7 @@ img:hover~#buy-now{
   
   #cart-page footer{
     position: absolute;
-    bottom: 0;
+    bottom: 0vh;
     width: 100%;
     height: 50px;
   }
@@ -160,4 +160,18 @@ table caption{
   text-align: center;
   font-size: 50px;
   padding: 30px;
+}
+#p-to-checkout{
+  font-size: 30px; 
+  color: blue; 
+  padding-top: 30px;
+  display: -webkit-flexbox;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  justify-content: center;
 }
