@@ -7,3 +7,4 @@ thumb = "/images/shoesthumbs/5.jpeg"
 title = "Product 7"
 
 +++
+This is my first product, adding product is really good and interesting.
