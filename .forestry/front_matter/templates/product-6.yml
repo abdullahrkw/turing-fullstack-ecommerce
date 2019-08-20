@@ -21,4 +21,5 @@ fields:
   name: description
   label: description
 pages:
+- content/products/product-7.md
 - content/products/product-6.md
