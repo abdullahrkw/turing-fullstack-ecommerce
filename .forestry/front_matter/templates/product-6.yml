@@ -1,6 +1,6 @@
 ---
-label: Product 6
-hide_body: true
+label: Product
+hide_body: false
 fields:
 - type: text
   name: title
