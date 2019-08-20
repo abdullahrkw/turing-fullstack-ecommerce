@@ -1,0 +1,22 @@
+---
+label: Product 6
+hide_body: true
+fields:
+- type: text
+  name: title
+  label: title
+- type: file
+  name: image
+  label: image
+- type: file
+  name: thumb
+  label: thumb
+- type: text
+  name: alt
+  label: alt
+- type: text
+  name: sku
+  label: sku
+- type: text
+  name: description
+  label: description
