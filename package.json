@@ -6,15 +6,16 @@
   "dependencies": {
     "axios": "^0.19.0",
     "faunadb": "^2.7.0",
+    "mysql": "^2.17.1",
     "netlify-lambda": "^1.5.0",
     "vue": "^2.6.10",
-    "vuex-persistedstate": "^2.5.4"
+    "vuex-persistedstate": "^2.5.4",
+    "webpack": "^4.39.2"
   },
   "devDependencies": {},
   "scripts": {
     "lambda-serve": "netlify-lambda serve functions --config webpack.config.js",
     "lambda-build": "netlify-lambda build functions"
-    
   },
   "repository": {
     "type": "git",

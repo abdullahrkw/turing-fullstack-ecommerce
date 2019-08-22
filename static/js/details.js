@@ -16,15 +16,15 @@ let prStck =  new Vue({
     },
     mounted: async function(){
         axios
-        .post('/.netlify/functions/price-read',JSON.stringify({'sku': this.sku}))
+        .post('https://47uqrxjowg.execute-api.us-east-2.amazonaws.com/default/faunaPriceRead',JSON.stringify({'sku': this.sku}))
         .then(response => {console.log('success', response);
                           
                             console.log(response.data);
-                            console.log(response.data.data[0][1]);
-                            this.price = response.data.data[0][1];
+                            console.log(response.data[0][1]);
+                            this.price = response.data[0][1];
                             console.log(this.price);
                         })
-        .catch(error => console.log('this is error',error));
+        .catch(error => console.log('this is error1',error));
         axios
         .post('/.netlify/functions/stock-read',JSON.stringify({'sku': this.sku}))
         .then(response => {console.log('success', response);
@@ -34,7 +34,7 @@ let prStck =  new Vue({
                             this.stock = response.data.data[0][1];
                             console.log(this.stock);
                         })
-        .catch(error => console.log('this is error',error));
+        .catch(error => console.log('this is error2',error));
 
       },
     computed: {

@@ -6,8 +6,11 @@
 	</head>
 	<body id = "cart-page">
 		<div class="container">	
+
 				{{ partial "header.html" . }}
-           
+
+				
+          
                 {{ if  eq .Title  "Cart"}}
 					{{ partial "cart.html" . }}
 				{{else if eq .Title "Checkout"}}
@@ -15,7 +18,7 @@
 
 				{{else }}
 
-                {{ end }}
+                {{ end }} 
 		</div>			
 			 
         {{ partial "footer.html" . }}
