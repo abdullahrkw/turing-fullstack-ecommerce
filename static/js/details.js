@@ -15,8 +15,15 @@ let prStck =  new Vue({
     
     },
     mounted: async function(){
-        axios
-        .post('https://47uqrxjowg.execute-api.us-east-2.amazonaws.com/default/faunaPriceRead',JSON.stringify({'sku': this.sku}))
+
+        axios({
+            method: 'post',
+            url: 'https://47uqrxjowg.execute-api.us-east-2.amazonaws.com/default/faunaPriceRead',
+            data:  JSON.stringify({'sku': this.sku})
+            
+
+          })
+       
         .then(response => {console.log('success', response);
                           
                             console.log(response.data);
